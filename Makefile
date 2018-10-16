@@ -13,6 +13,7 @@ azure-base-image:
 		-r azure/$(OS_FLAVOUR)/ansible/base/requirements.yml \
 		-p azure/$(OS_FLAVOUR)/ansible/base/roles
 	chmod +x ./resources/generic/azCLI/create-resource-group.sh
+	which az
 	./resources/generic/azCLI/create-resource-group.sh "$(ARM_RESOURCE_GROUP)" "$(ARM_LOCATION)"
 	packer build \
 		-var-file=azure/$(OS_FLAVOUR)/variables/base/variables.json \

@@ -62,6 +62,7 @@ pipeline {
             }
             steps {
                 ansiColor('xterm') {
+                    sh "echo $ARM_CLIENT_ID"
                     sh "docker-compose build image-maker && docker-compose run --rm image-maker make azure-base-image OS_FLAVOUR=${params.type}"
                 }
             }
