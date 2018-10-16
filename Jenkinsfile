@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        label 'base-image-builder'
-    }
+    agent any
     options {
         buildDiscarder(logRotator(numToKeepStr:'10'))
     }
