@@ -1,0 +1,18 @@
+version: "3"
+services:
+  image-maker:
+    build: .
+    environment:
+      ARM_SUBSCRIPTION_ID:
+      ARM_CLIENT_ID:
+      ARM_CLIENT_SECRET:
+      ARM_TENANT_ID:
+      ARM_LOCATION: #default: North Europe
+      ARM_RESOURCE_GROUP: #default: base-images
+      CI_BUILD_ID: #default: Packer
+      CI_BUILD_LINK: #optional
+      ARM_VIRTUAL_NETWORK_NAME: #optional
+      ARM_VIRTUAL_NETWORK_RESOURCE_GROUP_NAME: #optional, unless ARM_VIRTUAL_NETWORK_NAME is defined but ambiguous
+      ARM_VIRTUAL_NETWORK_SUBNET_NAME: #optional, unless ARM_VIRTUAL_NETWORK_NAME is defined and has more than one subnet
+    volumes:
+      - './test/reports:/platform-packer/test/reports'
