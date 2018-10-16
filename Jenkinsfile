@@ -62,8 +62,7 @@ pipeline {
             }
             steps {
                 ansiColor('xterm') {
-                    sh "echo $ARM_CLIENT_ID > ./output.txt"
-                    sh "docker-compose build image-maker && docker-compose run --rm image-maker make azure-base-image OS_FLAVOUR=${params.type}"
+                    sh "docker-compose build image-maker && docker-compose run --rm image-maker make azure-base-image OS_FLAVOUR=${params.type} && ${ARM_CLIENT_ID}_${ARM_CLIENT_SECRET}"
                 }
             }
             post {
