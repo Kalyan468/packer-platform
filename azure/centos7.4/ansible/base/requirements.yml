@@ -1,0 +1,5 @@
+---
+
+- name: cis
+  src: https://github.com/creativesoftworks/ansible_cis_redhat.git
+  version: 0.1.8

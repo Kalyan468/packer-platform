@@ -1,0 +1,28 @@
+---
+
+- hosts: all
+  become: yes
+  become_user: root
+  vars:
+    disable_udf_filesystem: no
+    company_name: Company and Co
+    verify_find: yes
+    set_umask: no
+    lock_inactive: yes
+    disable_ipv6: yes
+    pam:
+      password_quality:
+        passminlen: 16
+        passminclass: 4
+        passmaxrepeat: 2
+        passmaxclassrepeat: 2
+        reqlower: yes
+        requpper: yes
+        reqdigit: yes
+        reqother: yes
+      faillock:
+        enabled: yes
+        deny: 5
+        unlock_time: 900
+  roles:
+    - cis

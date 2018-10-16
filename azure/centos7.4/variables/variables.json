@@ -1,0 +1,8 @@
+{
+  "os_type": "Linux",
+  "image_publisher": "OpenLogic",
+  "image_offer": "CentOS",
+  "image_sku": "7.4",
+  "os_disk_size_gb": "128",
+  "vm_size": "Standard_A2_v2"
+}
